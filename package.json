@@ -1,0 +1,56 @@
+{
+  "name": "gitmoji-cli",
+  "version": "1.8.7",
+  "description": "A gitmoji client for using emojis on commit messages.",
+  "engines": {
+    "node": ">=6"
+  },
+  "bin": {
+    "gitmoji": "cli.js"
+  },
+  "scripts": {
+    "lint": "standard --fix \"src/**/*.js\"",
+    "test": "npm run lint && jest && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloscuesta/gitmoji-cli.git"
+  },
+  "keywords": [
+    "gitmoji",
+    "emoji",
+    "carloscuesta",
+    "commit"
+  ],
+  "author": "Carlos Cuesta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carloscuesta/gitmoji-cli/issues"
+  },
+  "homepage": "https://github.com/carloscuesta/gitmoji-cli#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cfonts": "^1.1.3",
+    "chalk": "^2.3.0",
+    "conf": "^1.3.1",
+    "execa": "^0.8.0",
+    "inquirer": "^4.0.0",
+    "inquirer-autocomplete-prompt": "^0.12.0",
+    "inquirer-datepicker-prompt": "^0.4.2",
+    "meow": "^4.0.0",
+    "ora": "^1.3.0",
+    "parent-dirs": "^1.0.0",
+    "path-exists": "^3.0.0",
+    "update-notifier": "^2.3.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "jest": "^21.2.1",
+    "standard": "^10.0.3"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  }
+}
