@@ -1,3 +1,5 @@
+<img src="assets/screenshot.png">
+
 ```
   Git as a life
 
