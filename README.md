@@ -1,4 +1,4 @@
-<img src="assets/screenshot.png">
+<img src="assets/demo.gif">
 
 ```
   Git as a life

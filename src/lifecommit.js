@@ -112,6 +112,7 @@ class GitmojiCli {
   _fetchCachedData (cachePath) {
     return Promise.resolve(JSON.parse(fs.readFileSync(cachePath)))
   }
+  
   _parseGitmojis (gitmojis) {
     return gitmojis.map(gitmoji => {
       const emoji = gitmoji.emoji
@@ -119,6 +120,7 @@ class GitmojiCli {
       const description = gitmoji.description
       return console.log(`${emoji} - ${chalk.blue(code)} - ${description}`)
     })
+  
   }
 
   _getCachePath () {
