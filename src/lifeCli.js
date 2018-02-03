@@ -12,7 +12,6 @@ inquirer.registerPrompt(
   require('inquirer-autocomplete-prompt')
 );
 inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'));
-
 class lifeCli {
   constructor(lifeApiClient) {
     this._lifeApiClient = lifeApiClient;

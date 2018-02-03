@@ -1,14 +1,15 @@
-<img src="assets/demo.gif">
-
 ```
-  Git as a life
+  Life as a git. Commit on your life.
 
   Usage
     $ life
   Options
-    --commit, -c    Interactively commit using the prompts
-    --init, -i      Initialize your life
-    --log, -l      Log your commit on life
+    --init, -i                 Initialize your life
+    --commit, -c               Commit on your life
+    --log, -l                  Log the commits on your life
+    --edit , -e [commitId]     Edit the existing commits
+    --dir, -d                  Create a directory that visualizing the commits on webpage
   Examples
-    $ life -i
+    $ life --commit
+
 ```

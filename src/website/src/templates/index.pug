@@ -3,7 +3,7 @@ html
   head
     title life-commit
     style
-      include ../../dist/css/style.css
+    link(rel="stylesheet" type="text/css" href="./css/style.css")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
     script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
   body
@@ -16,6 +16,5 @@ html
             div.timeline-content
               h2=life.lifemoji+"  "+life.title
               p=life.message
-              //- a(href="#" class="btn") button
     script
       include ../scripts/index.js

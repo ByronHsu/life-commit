@@ -11,7 +11,7 @@ const getCommitPath = () => {
   const home = process.env.HOME || process.env.USERPROFILE;
   const commitPath = path.join(home, '.life-cli', 'commits.json');
   return commitPath;
-}
+};
 var lifes = require(getCommitPath());
 
 const baseDirs = {
