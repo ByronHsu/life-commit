@@ -4,10 +4,15 @@ const sass = require('gulp-sass');
 const pugLint = require('gulp-pug-lint');
 const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
-const lifes = require('./src/data/data.json');
 const ghPages = require('gulp-gh-pages');
+const path = require('path');
 
-// console.log(lifes);
+const getCommitPath = () => {
+  const home = process.env.HOME || process.env.USERPROFILE;
+  const commitPath = path.join(home, '.life-cli', 'commits.json');
+  return commitPath;
+}
+var lifes = require(getCommitPath());
 
 const baseDirs = {
   src: 'src/',

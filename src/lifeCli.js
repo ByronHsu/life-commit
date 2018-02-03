@@ -2,12 +2,9 @@ const chalk = require('chalk');
 const execa = require('execa');
 const fs = require('fs');
 const inquirer = require('inquirer');
-// const parentDirs = require('parent-dirs');
 const path = require('path');
 const pathExists = require('path-exists');
 const uuid = require('uuid/v4');
-// const ora = require('ora');
-// const CFonts = require('cfonts');
 const prompts = require('./prompts');
 
 inquirer.registerPrompt(
