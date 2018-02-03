@@ -59,6 +59,9 @@ class lifeCli {
       });
   }
   log() {
+    if (this._getCommitsPath().exist === false) {
+      return this._errorMessage('Please initialize your life first.');
+    }
     return this._fetchCommits()
       .then(commits => {
         commits.sort(
@@ -79,6 +82,9 @@ class lifeCli {
       });
   }
   edit() {
+    if (this._getCommitsPath().exist === false) {
+      return this._errorMessage('Please initialize your life first.');
+    }
     if (process.argv.length < 4)
       return this._errorMessage('Please specify the commit id.');
     let id = process.argv[3];
@@ -125,6 +131,9 @@ class lifeCli {
       });
   }
   dir() {
+    if (this._getCommitsPath().exist === false) {
+      return this._errorMessage('Please initialize your life first.');
+    }
     const folder = 'web';
     const cmd = `cp -r ${__dirname}/website ${folder}`;
     execa
@@ -133,6 +142,7 @@ class lifeCli {
     console.log(
       `${chalk.yellow('Successfully create folder')} ${chalk.cyan(folder)}!`
     );
+    console.log(`Run $npm install\n    $gulp\nto visualize your commits!`);
   }
   _commitPrompt() {
     return this._fetchLifemojis()
