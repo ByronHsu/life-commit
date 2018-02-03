@@ -1,73 +1,56 @@
-const constants = require('./constants')
-const configVault = require('./config')
-const guard = require('./guard')
-
-const config = [
-  {
-    name: constants.AUTO_ADD,
-    message: 'Enable automatic "git add ."',
-    type: 'confirm'
-  },
-  {
-    name: constants.ISSUE_FORMAT,
-    message: 'Choose Issue Format',
-    type: 'list',
-    choices: ['github', 'jira']
-  },
-  {
-    name: constants.EMOJI_FORMAT,
-    message: 'Select how emojis should be used in commits',
-    type: 'list',
-    choices: [
-      { name: ':smile:', value: 'code' }, { name: '😄', value: 'emoji' }
-    ]
-  },
-  {
-    name: constants.SIGNED_COMMIT,
-    message: 'Enable signed commits',
-    type: 'confirm'
-  }
-]
-
-const gitmoji = (gitmojis) => {
+const guard = require('./guard');
+const edit = {
+  choose: () => [
+    {
+      name: 'choose',
+      message: 'Edit or Remove:',
+      type: 'list',
+      choices: ['Edit', 'Remove'],
+    },
+  ],
+};
+const commit = lifemojis => {
   return [
     {
-      name: 'gitmoji',
-      message: 'Choose a gitmoji:',
+      name: 'lifemoji',
+      message: 'Choose a lifemoji:',
       type: 'autocomplete',
       source: (answersSoFor, input) => {
         return Promise.resolve(
-          gitmojis.filter((gitmoji) => {
-            const emoji = gitmoji.name.concat(gitmoji.description).toLowerCase()
-            return (!input || emoji.indexOf(input.toLowerCase()) !== -1)
-          })
-          .map((gitmoji) => ({
-            name: `${gitmoji.emoji}  - ${gitmoji.description}`,
-            value: gitmoji[configVault.getEmojiFormat() || constants.CODE]
-          }))
-        )
-      }
+          lifemojis
+            .filter(lifemoji => {
+              const emoji = lifemoji.name
+                .concat(lifemoji.description)
+                .toLowerCase();
+              return !input || emoji.indexOf(input.toLowerCase()) !== -1;
+            })
+            .map(lifemoji => ({
+              name: `${lifemoji.emoji}  - ${lifemoji.description}`,
+              value: lifemoji.emoji,
+            }))
+        );
+      },
     },
     {
       name: 'title',
       message: 'Enter the commit title:',
-      validate: guard.title
+      validate: guard.title,
     },
     {
       name: 'message',
       message: 'Enter the commit message:',
-      validate: guard.message
+      validate: guard.message,
     },
     {
       name: 'date',
       type: 'datetime',
       message: 'Choose Date:',
-      format: ['yyyy', '/', 'm', '/', 'd']
-    }
-  ]
-}
+      format: ['yyyy', '/', 'm', '/', 'd'],
+    },
+  ];
+};
 
 module.exports = {
-  config,
-  gitmoji
-}
+  commit,
+  edit,
+};

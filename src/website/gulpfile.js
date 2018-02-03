@@ -1,0 +1,87 @@
+const gulp = require('gulp');
+const pug = require('gulp-pug');
+const sass = require('gulp-sass');
+const pugLint = require('gulp-pug-lint');
+const browserSync = require('browser-sync');
+const plumber = require('gulp-plumber');
+const lifes = require('./src/data/data.json');
+const ghPages = require('gulp-gh-pages');
+
+// console.log(lifes);
+
+const baseDirs = {
+  src: 'src/',
+  dist: 'dist/',
+};
+
+const routes = {
+  templates: {
+    pug: `${baseDirs.src}templates/*.pug`,
+    _pug: `${baseDirs.src}templates/_includes/*.pug`,
+  },
+  styles: {
+    scss: `${baseDirs.src}styles/*.scss`,
+    _scss: `${baseDirs.src}styles/_includes/*.scss`,
+  },
+  scripts: {
+    js: `${baseDirs.src}scripts/*.js`,
+  },
+  files: {
+    html: `${baseDirs.dist}`,
+    css: `${baseDirs.dist}css/`,
+    deploy: `${baseDirs.dist}**/*`,
+    staticSrc: `${baseDirs.src}static/**/*`,
+    staticDist: `${baseDirs.dist}static/`,
+  },
+};
+
+gulp.task('templates', ['styles'], () => {
+  return gulp
+    .src([routes.templates.pug, '!' + routes.templates._pug])
+    .pipe(pugLint())
+    .pipe(plumber({}))
+    .pipe(
+      pug({
+        locals: { emojis: lifes },
+      })
+    )
+    .pipe(gulp.dest(routes.files.html))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('styles', () => {
+  return gulp
+    .src(routes.styles.scss)
+    .pipe(plumber({}))
+    .pipe(sass())
+    .pipe(gulp.dest(routes.files.css))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('serve', ['styles', 'templates'], () => {
+  browserSync.init({
+    server: `${baseDirs.dist}`,
+  });
+
+  gulp.watch(
+    [routes.templates.pug, routes.templates._pug, routes.scripts.js],
+    ['templates']
+  );
+  gulp.watch([routes.styles.scss, routes.styles._scss], ['styles']);
+});
+
+gulp.task('build', ['templates', 'styles'], () => {
+  gulp.src([routes.files.staticSrc]).pipe(gulp.dest(routes.files.staticDist));
+});
+
+gulp.task('deploy', () => {
+  return gulp
+    .src(routes.files.deploy)
+    .pipe(ghPages({ message: ':rocket: life website' }));
+});
+
+gulp.task('dev', ['serve']);
+
+gulp.task('default', () => {
+  gulp.start('dev');
+});

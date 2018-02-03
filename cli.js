@@ -1,34 +1,43 @@
 #!/usr/bin/env node
-const meow = require('meow')
-const updateNotifier = require('update-notifier')
-const LifeCommitCli = require('./src/lifecommit.js')
-const pkg = require('./package.json')
-const utils = require('./src/utils.js')
+const meow = require('meow');
+const updateNotifier = require('update-notifier');
+const LifeCli = require('./src/lifeCli.js');
+const pkg = require('./package.json');
+const utils = require('./src/utils.js');
 
-updateNotifier({ pkg }).notify()
+updateNotifier({ pkg }).notify();
 
-const cli = meow(`
+const cli = meow(
+  `
   Usage
     $ life
   Options
-    --commit, -c    Interactively commit using the prompts
-    --init, -i      Initialize your life
-    --log, -l      Log your commit on life
+    --init, -i                 Initialize your life
+    --commit, -c               Commit on your life
+    --log, -l                  Log the commits on your life 
+    --edit , -e [commitId]     Edit the existing commits 
+    --dir, -d                  Create a directory that visualizing the commits on webpage      
   Examples
-    $ life -i
-`, {
-  flags: {
-    commit: { type: 'boolean', alias: 'c' },
-    init: { type: 'boolean', alias: 'i' },
-    log: { type: 'boolean', alias: 'l' },
+    $ life --commit
+`,
+  {
+    flags: {
+      init: { type: 'boolean', alias: 'i' },
+      commit: { type: 'boolean', alias: 'c' },
+      log: { type: 'boolean', alias: 'l' },
+      edit: { type: 'boolean', alias: 'e' },
+      dir: { type: 'boolean', alias: 'd' },
+    },
   }
-})
+);
 
-const gitmojiCli = new LifeCommitCli(utils.gitmojiApiClient)
+const lifeCli = new LifeCli(utils.lifeApiClient);
 const options = {
-  commit: () => gitmojiCli.ask('client'),
-  init: () => gitmojiCli.init(),
-  log: () => gitmojiCli.log(),
-}
+  init: () => lifeCli.init(),
+  commit: () => lifeCli.commit(),
+  log: () => lifeCli.log(),
+  edit: () => lifeCli.edit(),
+  dir: () => lifeCli.dir(),
+};
 
-utils.findGitmojiCommand(cli, options)
+utils.findLifeCommand(cli, options);

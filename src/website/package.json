@@ -1,0 +1,42 @@
+{
+  "name": "life-commit-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jsonvalidate": "jsonlint ./src/data/lifes.json -V ./src/data/schema.json",
+    "contributors": "curl https://api.github.com/repos/carloscuesta/life/contributors -o ./src/data/contributors.json",
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "start": "npm run contributors && gulp",
+    "test": "npm run jsonvalidate && gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloscuesta/life.git"
+  },
+  "author": "Carlos Cuesta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carloscuesta/life/issues"
+  },
+  "pugLintConfig": {
+    "disallowHtmlText": true,
+    "disallowDuplicateAttributes": true,
+    "disallowClassAttributeWithStaticValue": true,
+    "disallowIdAttributeWithStaticValue": true,
+    "requireLowerCaseAttributes": true
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-lint": "^0.1.6",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp-gh-pages": "^0.5.4",
+    "jsonlint": "^1.6.2"
+  }
+}
