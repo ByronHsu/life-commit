@@ -174,13 +174,13 @@ class lifeCli {
 
   _getCommitsPath() {
     const home = process.env.HOME || process.env.USERPROFILE;
-    const commitPath = path.join(home, '.life-cli', 'commits.json');
+    const commitPath = path.join(home, '.life-commit', 'commits.json');
     return { path: commitPath, exist: pathExists.sync(commitPath) };
   }
 
   _getCachePath() {
     const home = process.env.HOME || process.env.USERPROFILE;
-    const cachePath = path.join(home, '.life-cli', 'lifemojis.json');
+    const cachePath = path.join(home, '.life-commit', 'lifemojis.json');
     return { path: cachePath, exist: pathExists.sync(cachePath) };
   }
 

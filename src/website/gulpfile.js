@@ -9,7 +9,7 @@ const path = require('path');
 
 const getCommitPath = () => {
   const home = process.env.HOME || process.env.USERPROFILE;
-  const commitPath = path.join(home, '.life-cli', 'commits.json');
+  const commitPath = path.join(home, '.life-commit', 'commits.json');
   return commitPath;
 };
 

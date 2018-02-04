@@ -1,5 +1,5 @@
 {
-  "name": "life-cli",
+  "name": "life-commit",
   "version": "1.0.0",
   "description": "Life as a git. Commit on your life.",
   "engines": {
@@ -12,19 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ByronHsu/life-cli"
+    "url": "git+https://github.com/ByronHsu/life-commit"
   },
   "keywords": [
-    "life-cli",
+    "life-commit",
     "life",
     "commit"
   ],
   "author": "Byron Hsu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ByronHsu/life-cli/issues"
+    "url": "https://github.com/ByronHsu/life-commit/issues"
   },
-  "homepage": "https://github.com/ByronHsu/life-cli",
+  "homepage": "https://github.com/ByronHsu/life-commit",
   "dependencies": {
     "axios": "^0.17.1",
     "cfonts": "^1.1.3",
