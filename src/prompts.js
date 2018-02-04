@@ -14,22 +14,11 @@ const commit = lifemojis => {
     {
       name: 'lifemoji',
       message: 'Choose a lifemoji:',
-      type: 'autocomplete',
-      source: (answersSoFor, input) => {
-        return Promise.resolve(
-          lifemojis
-            .filter(lifemoji => {
-              const emoji = lifemoji.name
-                .concat(lifemoji.description)
-                .toLowerCase();
-              return !input || emoji.indexOf(input.toLowerCase()) !== -1;
-            })
-            .map(lifemoji => ({
-              name: `${lifemoji.emoji}  - ${lifemoji.description}`,
-              value: lifemoji.emoji,
-            }))
-        );
-      },
+      type: 'list',
+      choices: lifemojis.map(lifemoji => ({
+        name: `${lifemoji.emoji}  - ${lifemoji.description}`,
+        value: lifemoji.emoji,
+      })),
     },
     {
       name: 'title',

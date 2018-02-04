@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const lifeApiClient = axios.create({
-  baseURL: 'https://raw.githubusercontent.com/carloscuesta/gitmoji/master',
+  baseURL: 'https://raw.githubusercontent.com/ByronHsu/life-cli/master',
   timeout: 5000,
   headers: {},
   params: {},

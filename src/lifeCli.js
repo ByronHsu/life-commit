@@ -7,10 +7,6 @@ const pathExists = require('path-exists');
 const uuid = require('uuid/v4');
 const prompts = require('./prompts');
 
-inquirer.registerPrompt(
-  'autocomplete',
-  require('inquirer-autocomplete-prompt')
-);
 inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'));
 class lifeCli {
   constructor(lifeApiClient) {
@@ -25,8 +21,8 @@ class lifeCli {
       );
       return;
     } else {
-      console.log(
-        `${chalk.cyan('Your life had been initialized. Start commit now!')}`
+      return this._errorMessage(
+        'Your life had been initialized. Start commit now!'
       );
     }
   }
@@ -95,7 +91,7 @@ class lifeCli {
         commits = data;
         index = commits.findIndex(patch => patch.id.indexOf(id) !== -1);
         if (index === -1) {
-          return this._errorMessage('Commid id dose not exist.');
+          return this._errorMessage('Commit id does not exist.');
         } else {
           const date = new Date(commits[index].date).toString('yyyy/M/d');
           console.log(
@@ -146,10 +142,7 @@ class lifeCli {
   }
   _commitPrompt() {
     return this._fetchLifemojis()
-      .then(Lifemojis => prompts.commit(Lifemojis))
-      .then(questions => {
-        return inquirer.prompt(questions);
-      })
+      .then(lifemojis => inquirer.prompt(prompts.commit(lifemojis)))
       .catch(err => this._errorMessage(err.code));
   }
 
@@ -200,11 +193,11 @@ class lifeCli {
     return this._lifeApiClient
       .request({
         method: 'GET',
-        url: '/src/data/gitmojis.json',
+        url: '/src/data/lifemojis.json',
       })
       .then(res => {
         console.log(`${chalk.yellow('Lifemojis')} updated successfully!`);
-        return res.data.gitmojis;
+        return res.data;
       })
       .catch(error =>
         this._errorMessage(`Network connection not found - ${error.code}`)
