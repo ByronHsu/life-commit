@@ -8,7 +8,7 @@ html
     script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
   body
     div.container
-      h1.project-name RESPONSIVE TIMELINE
+      h1.project-name TIMELINE
       div(id="timeline")
         each life in emojis
           div.timeline-item
@@ -16,5 +16,6 @@ html
             div.timeline-content
               h2=life.lifemoji+"  "+life.title
               p=life.message
+              a.btn=life.date
     script
       include ../scripts/index.js

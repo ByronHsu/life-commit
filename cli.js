@@ -16,7 +16,7 @@ const cli = meow(
     --commit, -c               Commit on your life
     --log, -l                  Log the commits on your life 
     --edit , -e <commitId>     Edit the existing commits 
-    --dir, -d                  Create a directory that visualizing the commits on webpage      
+    --dir, -d [folder name]    Create a directory that visualizing the commits on webpage      
   Examples
     $ life --commit
 `,

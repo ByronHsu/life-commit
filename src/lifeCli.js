@@ -48,7 +48,7 @@ class lifeCli {
         this._createFile(this._getCommitsPath().path, commits);
       })
       .then(() => {
-        console.log(`${chalk.green('1 commit added(+)')}`);
+        console.log(`${chalk.green('1 commit added')}`);
       })
       .catch(error => {
         return this._errorMessage(error);
@@ -130,15 +130,21 @@ class lifeCli {
     if (this._getCommitsPath().exist === false) {
       return this._errorMessage('Please initialize your life first.');
     }
-    const folder = 'web';
+    const folder = process.argv[3] || 'website';
     const cmd = `cp -r ${__dirname}/website ${folder}`;
     execa
       .shell(cmd)
       .catch(err => this._errorMessage(err.stderr ? err.stderr : err.stdout));
     console.log(
-      `${chalk.yellow('Successfully create folder')} ${chalk.cyan(folder)}!`
+      `${chalk.green('Successfully create folder at:')} ${chalk.green(
+        process.cwd() + '/' + folder
+      )}\n`
     );
-    console.log(`Run $npm install\n    $gulp\nto visualize your commits!`);
+    console.log(
+      `${chalk.cyan(`Run the following commands to visualize your commits!`)}`
+    );
+    console.log(`$ npm install`);
+    console.log(`$ npm run start`);
   }
   _commitPrompt() {
     return this._fetchLifemojis()

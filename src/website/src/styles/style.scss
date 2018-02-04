@@ -215,14 +215,18 @@ header {
 	font-size: 12px;
 	@include prefix(border-radius, 5px);
 	@include prefix(transition, background .3s ease);
-	@include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+	// @include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+	// box-shadow: none;
+	top: 2px;
+	left: 2px;
+	@include prefix(box-shadow, 2px 2px 0 transparent);
 
-	&:hover {
-		box-shadow: none ;
-		top: 2px;
-		left: 2px;
-		@include prefix(box-shadow, 2px 2px 0 transparent);
-	}
+	// &:hover {
+	// 	box-shadow: none ;
+	// 	top: 2px;
+	// 	left: 2px;
+	// 	@include prefix(box-shadow, 2px 2px 0 transparent);
+	// }
 }
 
 @media screen and (max-width: 768px) {
