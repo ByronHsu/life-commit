@@ -1,6 +1,6 @@
 {
   "name": "life-commit",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Life as a git. Commit on your life.",
   "engines": {
     "node": ">=6"
@@ -19,7 +19,7 @@
     "life",
     "commit"
   ],
-  "author": "Byron Hsu",
+  "author": "byronhsu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ByronHsu/life-commit/issues"
