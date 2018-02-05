@@ -15,9 +15,13 @@ const getCommitPath = () => {
 
 var lifes = () => {
   var load = require(getCommitPath());
-  for(let i = 0; i < load.length; i++){
+  for (let i = 0; i < load.length; i++) {
     load[i].date = /\d+-\d+-\d+/.exec(load[i].date);
   }
+  load.sort((c1, c2) => {
+    if (new Date(c1.date).getTime() < new Date(c2.date).getTime()) return -1;
+    else return 1;
+  });
   return load;
 };
 
@@ -86,11 +90,11 @@ gulp.task('build', ['templates', 'styles'], () => {
   gulp.src([routes.files.staticSrc]).pipe(gulp.dest(routes.files.staticDist));
 });
 
-// gulp.task('deploy', () => {
-//   return gulp
-//     .src(routes.files.deploy)
-//     .pipe(ghPages({ message: ':rocket: life website' }));
-// });
+gulp.task('deploy', () => {
+  return gulp
+    .src(routes.files.deploy)
+    .pipe(ghPages({ message: ':rocket: life website' }));
+});
 
 gulp.task('dev', ['serve']);
 

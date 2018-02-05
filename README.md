@@ -1,13 +1,26 @@
 <p align="center">
 <img src="assets/LOGO.png" width=300 >
-
 </p>
+
+<p align=center>
+<a target="_blank" href="https://npmjs.org/package/nba-go" title="NPM version"><img src="https://img.shields.io/badge/npm-v0.1.1-green.svg"></a>
+<a target="_blank" href="http://nodejs.org/download/" title="Node version"><img src="https://img.shields.io/badge/node.js-%3E=_6.0-green.svg"></a>
+<a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+<a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+</p>  
+
 
 > 🏃📆 Life as a git. Commit on your life.
 
+## Demo
+
 <p align="center">
-<img src="assets/demo.gif">
+<img src="assets/demo.gif" width=800>
 </p>
+
+### My Website
+
+https://byronhsu.github.io/life-commit/
 
 ## Install
 In order to use life-commit, make sure that you have Node version 6.0.0 or higher.
@@ -20,6 +33,8 @@ $ npm install -g life-commit
 
 ### overview
 ```
+  Usage
+    $ life
   Options
     --init, -i                 
     --commit, -c               
@@ -72,8 +87,15 @@ Create a directory that visualizing the commits on webpage
 
 <img src="assets/life-d.png" width=500>
 
+## Contribute
+- Define lifemojis
+
+  All the lifemojis are stored at ``/src/data/lifemojis.json``. Open an issue that contains an **emoji** and **description**. Let's brainstorm and define more and more creative lifemojis together!
+
 ## Credits
 
 [Elegant UI design by Bruno Rodrigues](https://codepen.io/itbruno/pen/KwarLp)
 
 Creative project [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) and [gitmoji](https://github.com/carloscuesta/gitmoji) by [Carlos Cuesta](https://github.com/carloscuesta)
+
+LOGO desinged by [Gary Chiang](https://www.facebook.com/gary8621)
