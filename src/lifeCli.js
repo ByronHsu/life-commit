@@ -60,10 +60,11 @@ class lifeCli {
     }
     return this._fetchCommits()
       .then(commits => {
-        commits.sort(
-          (c1, c2) =>
-            Date.parse(new Date(c1.date)) < Date.parse(new Date(c2.date))
-        );
+        commits.sort((c1, c2) => {
+          if (new Date(c1.date).getTime() < new Date(c2.date).getTime())
+            return 1;
+          else return -1;
+        });
         commits.forEach(commit => {
           const date = new Date(commit.date).toString('yyyy/M/d');
           console.log(

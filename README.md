@@ -5,6 +5,10 @@
 
 > 🏃📆 Life as a git. Commit on your life.
 
+<p align="center">
+<img src="assets/demo.gif">
+</p>
+
 ## Install
 In order to use life-commit, make sure that you have Node version 6.0.0 or higher.
 
