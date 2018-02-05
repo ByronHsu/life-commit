@@ -1,0 +1,26 @@
+{
+  "name": "life-commit-website",
+  "description": "",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp"
+  },
+  "pugLintConfig": {
+    "disallowHtmlText": true,
+    "disallowDuplicateAttributes": true,
+    "disallowClassAttributeWithStaticValue": true,
+    "disallowIdAttributeWithStaticValue": true,
+    "requireLowerCaseAttributes": true
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-lint": "^0.1.6",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp-gh-pages": "^0.5.4"
+  }
+}
