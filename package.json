@@ -1,6 +1,6 @@
 {
   "name": "life-commit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Life as a git. Commit on your life.",
   "engines": {
     "node": ">=6"
