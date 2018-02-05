@@ -91,6 +91,21 @@ Create a directory that visualizing the commits on webpage
 - Define lifemojis
 
   All the lifemojis are stored at ``/src/data/lifemojis.json``. Open an issue that contains an **emoji** and **description**. Let's brainstorm and define more and more creative lifemojis together!
+  Example:
+  ```js
+    {
+    "emoji": "🚚",
+    "description": "Made a move"
+    },
+    {
+    "emoji": "👰",
+    "description": "Got married"
+    },
+    {
+    "emoji": "👨‍👩‍👧",
+    "description": "Had a child"
+    },
+  ```
 
 ## Credits
 
