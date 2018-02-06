@@ -18,6 +18,8 @@
 <img src="assets/demo.gif" width=800>
 </p>
 
+<h5 align="center"><a href="https://www.producthunt.com/posts/life-commit">:rocket: Discuss it on Product Hunt!</a></h5>
+
 ### My Website
 
 https://byronhsu.github.io/life-commit/
@@ -90,9 +92,9 @@ Create a directory that visualizing the commits on webpage
 ## Contribute
 - Define lifemojis
 
-  All the lifemojis are stored at ``/src/data/lifemojis.json``. Open an issue that contains an **emoji** and **description**. Let's brainstorm and define more and more creative lifemojis together!
+  All the lifemojis are stored at ``/src/data/lifemojis.json``. Comment at [issue#2](https://github.com/ByronHsu/life-commit/issues/2) with an **emoji** and **description**. Let's brainstorm and define more and more creative lifemojis together!
   
-  Example:
+  Format:
   ```js
     {
     "emoji": "🚚",
@@ -107,7 +109,9 @@ Create a directory that visualizing the commits on webpage
     "description": "Had a child"
     },
   ```
+- Code
 
+  Send PRs directly!
 ## Credits
 
 [Elegant UI design by Bruno Rodrigues](https://codepen.io/itbruno/pen/KwarLp)
