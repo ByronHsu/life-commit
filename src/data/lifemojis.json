@@ -62,5 +62,17 @@
  {
   "emoji": "👔",
   "description": "Get a job"
+ },
+ {
+  "emoji": "🚚",
+  "description": "Made a move"
+ },
+ {
+  "emoji": "👰",
+  "description": "Got married"
+ },
+ {
+  "emoji": "👨‍👩‍👧",
+  "description": "Had a child"
  }
 ]

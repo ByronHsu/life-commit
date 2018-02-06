@@ -65,6 +65,18 @@ var arr = [
     emoji: '👔',
     description: 'Get a job',
   },
+  {
+    emoji: '🚚',
+    description: 'Made a move',
+  },
+  {
+    emoji: '👰',
+    description: 'Got married',
+  },
+  {
+    emoji: '👨‍👩‍👧',
+    description: 'Had a child',
+  },
 ];
 
-fs.writeFileSync('./lifemoji.json', JSON.stringify(arr, null, ' '));
+fs.writeFileSync('./lifemojis.json', JSON.stringify(arr, null, ' '));
