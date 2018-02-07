@@ -63,7 +63,7 @@ var arr = [
   },
   {
     emoji: '👔',
-    description: 'Get a job',
+    description: 'Got a job',
   },
   {
     emoji: '🚚',
@@ -76,6 +76,10 @@ var arr = [
   {
     emoji: '👨‍👩‍👧',
     description: 'Had a child',
+  },
+  {
+    emoji: '🐾',
+    description: 'Got a pet',
   },
 ];
 
