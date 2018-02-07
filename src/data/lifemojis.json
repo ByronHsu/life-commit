@@ -75,8 +75,8 @@
   "emoji": "👨‍👩‍👧",
   "description": "Had a child"
  },
-   {
-    emoji: '🐾',
-    description: 'Got a pet',
-  }
+ {
+  "emoji": "🐾",
+  "description": "Got a pet"
+ }
 ]
