@@ -81,6 +81,42 @@ var arr = [
     emoji: '🐾',
     description: 'Got a pet',
   },
+  {
+   "emoji": "🏖",
+   "description": "Vacation"
+  },
+  {
+   "emoji": "🎁",
+    "descripting": "Receiving something"
+   },
+   {
+   "emoji": "💸",
+    "description": "Buying something"
+   },
+   {
+    "emoji": "🏈",
+    "description": "Sports"
+   },
+   {
+   "emoji": "⛑",
+    "description": "Helped someone"
+   },
+   {
+   "emoji": "👜",
+    "description": "Leaving something"
+   },
+   {
+   "emoji": "🌎",
+    "description": "Travelling"
+   },
+   {
+   "emoji": "🏥",
+    "description": "Someone got sick"
+   },
+   {
+    "emoji": "💀",
+    "description": "Somebody passed away"
+   }
 ];
 
 fs.writeFileSync('./lifemojis.json', JSON.stringify(arr, null, ' '));
