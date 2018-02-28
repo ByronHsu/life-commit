@@ -54,10 +54,6 @@ var arr = [
     description: 'Breaking change',
   },
   {
-    emoji: '🏥',
-    description: 'Somebody passed away',
-  },
-  {
     emoji: '📝',
     description: 'Learn new things',
   },
