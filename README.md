@@ -25,11 +25,11 @@
 https://byronhsu.github.io/life-commit/
 
 ## Install
-In order to use life-commit, make sure that you have Node version 6.0.0 or higher.
 
-```
-$ npm install -g life-commit
-```
+1. Get [Node 6.0.0 or higher](https://nodejs.org/en/download/).
+1. Install:
+    - Windows: `$ npm install -g life-commit`
+    - Other: `$ sudo npm install -g life-commit`
 
 ## Usage
 
