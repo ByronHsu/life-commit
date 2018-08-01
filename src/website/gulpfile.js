@@ -19,7 +19,7 @@ var lifes = () => {
     load[i].date = /\d+-\d+-\d+/.exec(load[i].date);
   }
   load.sort((c1, c2) => {
-    if (new Date(c1.date).getTime() < new Date(c2.date).getTime()) return -1;
+    if (new Date(c1.date.input).getTime() < new Date(c2.date.input).getTime()) return -1;
     else return 1;
   });
   return load;
